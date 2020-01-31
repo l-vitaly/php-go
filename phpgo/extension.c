@@ -449,7 +449,7 @@ static int phpgo_function_conv_ret(int cbid, phpgo_callback_info* cbi, void *p0,
     }
 
     zval* self = getThis();
-    // 返回值解析转换
+    // 返回值解析转换]
     switch (ret_type) {
     case IS_STRING:
 #ifdef ZEND_ENGINE_3
