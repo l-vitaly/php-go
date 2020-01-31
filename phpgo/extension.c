@@ -596,7 +596,7 @@ void phpgo_function_handler5(int cbid, phpgo_callback_info* cbi, int ht, zval *r
                                  argv[2], argv[3], argv[4], argv[5],
                                  argv[6], argv[7], argv[8], argv[9], &rv, (void*) op);
     dlog_debug("inout ret:%p", rv);
-    phpgo_function_conv_ret(cbid, cbi, rv, return_value, execute_data);
+    phpgo_function_conv_ret(cbid, cbi, rv, return_value, NULL);
 }
 
 void phpgo_function_handler(int ht, zval *return_value, zval **return_value_ptr,
