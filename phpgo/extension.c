@@ -505,8 +505,9 @@ static int phpgo_function_conv_ret(int cbid, phpgo_callback_info* cbi, void *p0,
         zend_error(E_WARNING, "unrecognized return value: %d, %s.", ret_type, type2name(ret_type));
         dlog_error("unrecognized return value: %d, %s.", ret_type, type2name(ret_type));
         break;
-    }
 #endif
+    }
+
 
     return 0;
 }
