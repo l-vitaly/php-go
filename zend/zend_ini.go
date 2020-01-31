@@ -1,6 +1,7 @@
 package zend
 
 /*
+#include <stdint.h>
 #include <zend_API.h>
 #include <zend_ini.h>
 
