@@ -5,8 +5,8 @@ import "log"
 import "reflect"
 import "math/rand"
 import "time"
-import "github.com/kitech/php-go/phpgo"
-import "github.com/kitech/php-go/zend"
+import "github.com/l-vitaly/php-go/phpgo"
+import "github.com/l-vitaly/php-go/zend"
 
 type PGDemo struct {
 }

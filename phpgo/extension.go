@@ -22,7 +22,7 @@ import "log"
 import "os"
 import "strings"
 
-import "github.com/kitech/php-go/zend"
+import "github.com/l-vitaly/php-go/zend"
 
 // 一个程序只能创建一个扩展
 // 所以使用全局变量也没有问题。
@@ -245,18 +245,18 @@ func addMethod(ctor interface{}, cidx int, fidx int, cname string, mname string,
 	}
 
 	isSelf := false
-    methodRetType := reflect.TypeOf(fn)
-    if methodRetType.NumOut() > 0 {
-        classType := reflect.TypeOf(ctor).Out(0)
-        isSelf = classType == methodRetType.Out(0)
-    }
+	methodRetType := reflect.TypeOf(fn)
+	if methodRetType.NumOut() > 0 {
+		classType := reflect.TypeOf(ctor).Out(0)
+		isSelf = classType == methodRetType.Out(0)
+	}
 
 	var rety int
-    if !isSelf {
-    	rety = zend.RetType2Php(fn)
-    } else {
-        rety = zend.PHPTY_IS_SELF
-    }
+	if !isSelf {
+		rety = zend.RetType2Php(fn)
+	} else {
+		rety = zend.PHPTY_IS_SELF
+	}
 
 	ccname := C.CString(cname)
 	cmname := C.CString(mname)
