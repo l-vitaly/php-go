@@ -487,28 +487,25 @@ static int phpgo_function_conv_ret(int cbid, phpgo_callback_info* cbi, void *p0,
         RETVAL_NULL();
         break;
 #endif
-
-#ifdef ZEND_ENGINE_3
     case IS_RESOURCE:
         RETVAL_NULL();
         break;
     case IS_ARRAY:
         phpgo_function_reutrn_php_array(p0, return_value);
         break;
+#ifdef ZEND_ENGINE_3
     case IS_SELF:
         zval* self = getThis();
 
         RETVAL_ZVAL(self, 1, 0);
         break;
+#endif
     default:
         // wtf?
         zend_error(E_WARNING, "unrecognized return value: %d, %s.", ret_type, type2name(ret_type));
         dlog_error("unrecognized return value: %d, %s.", ret_type, type2name(ret_type));
         break;
-#endif
     }
-
-
     return 0;
 }
 
