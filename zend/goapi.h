@@ -58,7 +58,7 @@ typedef __complex double GoComplex128;
 
 // static assertion to make sure the file is being used on architecture
 // at least with matching size of GoInt.
-typedef char _check_for_64_bit_pointer_matching_GoInt[sizeof(void*)==64/8 ? 1:-1];
+typedef char _check_for_64_bit_pointer_matching_GoInt[sizeof(void*)==64/8 ? 1 : 0];
 
 typedef struct { char *p; GoInt n; } GoString;
 typedef void *GoMap;
